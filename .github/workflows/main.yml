@@ -28,8 +28,8 @@ jobs:
             node-version: 12.x
 
     # Runs a set of commands using the runners shell
-   - name: Installing Surge
-     run: npm install -g surge
-   - name: Deploying using surge
-     run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }} 
-     run: echo "Please visit => ${{ secrets.SURGE_DOMAIN }}"
+    - run: npm install -g surge
+    - run: echo "Deploying website"
+    - run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }} 
+          
+    - run: echo "Please visit => ${{ secrets.SURGE_DOMAIN }}"
